@@ -20,12 +20,12 @@ const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', '295', false)
 
 addBookToLibrary('Rayuela', 'Julio Cortázar', '295', false)
 addBookToLibrary('Crónica de una muerte anunciada', 'Gabriel García Márquez', '300', true)
-addBookToLibrary('Livro do desassossego', 'Fernando Pessoa', 800, true)
+addBookToLibrary('Livro do desassossego', 'Fernando Pessoa', 800, false)
 addBookToLibrary('Nuestra parte de noche', 'Mariana Enriquez', 700, true)
 
 function displaybooks() {
     let containerEl = document.querySelector('.container')
-
+    containerEl.textContent = null
     for (const book of myLibrary) {
         let cardEl = document.createElement('div')
         cardEl.classList.add('book-card')
@@ -61,4 +61,18 @@ const modal = document.querySelector('.modal')
 
 showModal.addEventListener('click', () => {
     modal.showModal()
+})
+
+const addBookBtn = document.querySelector('#add-book')
+
+addBookBtn.addEventListener('click', () => {
+    event.preventDefault()
+    console.log(title.value + author.value + pages.value)
+
+    const selected = document.querySelector('input[name=readyet]:checked')
+    console.log(selected.value === "true" ? true : false)
+    addBookToLibrary(title.value, author.value, pages.value, (selected.value === "true" ? true : false))
+    document.querySelector('#new-book-form').reset()
+    displaybooks()
+    modal.close()
 })

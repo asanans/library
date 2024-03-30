@@ -8,7 +8,7 @@
 </head>
 <body>
     <dialog class="modal">
-        <form>
+        <form id="new-book-form">
             <label for="title">What's the title?</label>
             <br>
             <input id="title" type="text" name="title">
@@ -23,10 +23,10 @@
             <br><br>
             <label>Have you read the book yet?</label>
             <br>
-            <input id="yes" type="radio" name="read" value="yes"><label for="yes">Yes</label>
-            <input id="no" type="radio" name="read" value="no"><label for="no">No</label>
+            <input id="yes" type="radio" name="readyet" value="true"><label for="yes">Yes</label>
+            <input id="no" type="radio" name="readyet" value="false"><label for="no">No</label>
             <br><br>
-            <button>add book</button>
+            <button id="add-book">add book</button>
         </form>
     </dialog>
 
