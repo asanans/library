@@ -1,0 +1,60 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    background-color: #AAD7D9;
+}
+
+h1 {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    font-family: 'Courier New', Courier, monospace
+}
+
+button {
+    padding: 15px 20px;
+    background-color: #f6ece0;
+    border: 2px solid rgba(0,0,0,0.8);
+    letter-spacing: 0.15rem;
+}
+
+.container {
+    padding-top: 20px;
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.book-card {
+    background-color: white;
+    padding: 15px;
+    width: 175px;
+    /* border-radius: 10px; */
+    filter: drop-shadow(5px 5px 0px rgba(0,0,0,0.4));
+    line-height: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book-title {
+    font-variant: small-caps;
+    font-weight: 400;
+    font-size: 17px;
+    letter-spacing: 0.05rem;
+}
+
+.book-author {
+    font-size: 13px;
+    padding-bottom: 15px;
+    font-style: italic;
+    color: #6f6f6f;
+}
