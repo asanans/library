@@ -26,7 +26,7 @@ addBookToLibrary('Nuestra parte de noche', 'Mariana Enriquez', 700, true)
 function displaybooks() {
     let containerEl = document.querySelector('.container')
     containerEl.textContent = null
-    for (const book of myLibrary) {
+    for (const [index, book] of myLibrary.entries()) {
         let cardEl = document.createElement('div')
         cardEl.classList.add('book-card')
         let headerEl = document.createElement('div')
@@ -36,6 +36,18 @@ function displaybooks() {
         let footerEl = document.createElement('div')
         let pagesEl = document.createElement('p')
         let statusEl = document.createElement('p')
+
+        let deleteIcon = document.createElement('i')
+        deleteIcon.classList.add('fa-regular', 'fa-trash-can', 'delete')
+        // deleteIcon.setAttribute('value', index)
+        deleteIcon.addEventListener('click', () => {
+            console.log(index)
+            // console.log(event.target.getAttribute('value'))
+            myLibrary.splice(index, 1)
+            displaybooks()
+        })
+
+
         titleEl.classList.add('book-title')
         authorEl.classList.add('book-author')
         titleEl.textContent = book.title
@@ -48,9 +60,24 @@ function displaybooks() {
 
         pagesEl.textContent = `${book.pages} pages`
         statusEl.textContent = `status: ${book.hasRead ? 'read' : 'not yet read'}`
+        
+        cardEl.appendChild(deleteIcon)
         cardEl.appendChild(headerEl)
         cardEl.appendChild(footerEl)
+
+        // let deleteBtn = document.createElement('button')
+        // deleteBtn.classList.add("delete")
+        // deleteBtn.innerText = "delete"
+
+        // cardEl.appendChild(deleteBtn)
+
+        // const hideEl = document.createElement('div')
+        // hideEl.classList.add('hide')
+        // cardEl.appendChild(hideEl)
+
         containerEl.appendChild(cardEl)
+
+
     }
 }
 

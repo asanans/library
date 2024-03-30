@@ -85,3 +85,39 @@ dialog::backdrop {
     background-color: black;
     opacity: 0.6;
 }
+
+button.delete {
+    background-color: #AAD7D9;
+    display: none;
+}
+
+/* .book-card:hover {
+    background-color: black;
+    opacity: 0.4;
+}
+
+.hide {
+    display: none;
+}
+  
+.book-card:hover > .hide {
+    display: inline-flex;
+    background-color: red;
+    width: auto;
+    height: 10px;
+}
+
+.book-card:hover .book-author {
+    display: none;
+} */
+
+.delete {
+    align-self: flex-end;
+    padding-bottom: 5px;
+    width: 30px;
+    visibility: hidden;
+}
+
+.book-card:hover .delete {
+    visibility: visible;
+}
