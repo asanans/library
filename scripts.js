@@ -47,6 +47,13 @@ function displaybooks() {
             displaybooks()
         })
 
+        const toggleRead = document.createElement('i')
+        toggleRead.className = book.hasRead ? "fa-regular fa-square-check" : "fa-regular fa-square"
+        toggleRead.addEventListener('click', () => {
+            book.hasRead = !book.hasRead
+            displaybooks()
+        })
+
 
         titleEl.classList.add('book-title')
         authorEl.classList.add('book-author')
@@ -57,6 +64,7 @@ function displaybooks() {
 
         footerEl.appendChild(pagesEl)
         footerEl.appendChild(statusEl)
+        footerEl.appendChild(toggleRead)
 
         pagesEl.textContent = `${book.pages} pages`
         statusEl.textContent = `status: ${book.hasRead ? 'read' : 'not yet read'}`
@@ -64,6 +72,7 @@ function displaybooks() {
         cardEl.appendChild(deleteIcon)
         cardEl.appendChild(headerEl)
         cardEl.appendChild(footerEl)
+    
 
         // let deleteBtn = document.createElement('button')
         // deleteBtn.classList.add("delete")
