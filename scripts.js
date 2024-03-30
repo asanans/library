@@ -55,3 +55,10 @@ function displaybooks() {
 }
 
 displaybooks()
+
+const showModal = document.querySelector('#show-modal')
+const modal = document.querySelector('.modal')
+
+showModal.addEventListener('click', () => {
+    modal.showModal()
+})
